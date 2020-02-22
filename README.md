@@ -1,5 +1,5 @@
 # Custom-Spotify-Playlist-Generator
-This repository contains code to generate customized Spotify playlists tailored to the user's track library. 
+This repository contains code to generate customized Spotify playlists tailored to the user's track library (Note: It can take a little while to run if you have a lot of tracks in your user library)
 
 The code utilizes the Spotify API and K-Medoids clustering to identify clusters of similar songs in a user's track library and generates a unique playlist for each cluster present in the library. This process if fully automated requiring the user to only input which Spotify account they want to use, a desired level of track popularity they wish to filter the final playlists, and a distance filter which filters the final playlist on similarity to the cluster center.
 
