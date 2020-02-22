@@ -7,15 +7,27 @@ In order to access the API (and run the code) you need to register you Spotify a
 
 The general methodology is as follows:
 1. Pull in the tracks in a user’s Spotify library and their associated audio features
+
 2. Partition the tracks into clusters using K-Medoids clustering
+    
     a. The optimal ‘K’ number of clusters is automatically selected from the range of 2-10 by taking the K that produces the highest            average Silhouette Score
+    
     b. The clustering is re-run using the optimal K number of clusters
+    
     c. The closest 3 songs to each cluster medoid are returned to help explain the clusters
+
 3. Identify tracks that are similar to each cluster and not already in the user’s library
+    
     a. All relevant artists are pulled for each artist in each cluster
+    
     b. The top 10 tracks and their audio features for each new artist are found
+    
     c. The list of new tracks are filtered to only include those that are within a specified Euclidean distance of the medoid of the            cluster they are associated with
+    
     d. The list of new tracks are filtered to only include those that meet a specified popularity score
+
 4. Upload the Playlists to Spotify
+    
     a. Create a new playlist for each cluster
+    
     b. Add the tracks to the appropriate playlist
